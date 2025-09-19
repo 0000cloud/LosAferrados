@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos de Transferencia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ff6f00; /* naranja tipo Broncos */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      color: #333;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #ff6f00;
+    }
+    .dato {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+    .numero {
+      font-weight: bold;
+      font-size: 20px;
+      color: #ff6f00;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #ff6f00;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e65c00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Datos de Transferencia</h1>
+    
+    <div class="dato"><strong>Número de tarjeta:</strong></div>
+    <div class="numero" id="numero">5101 2572 3782 5073</div>
+
+    <div class="dato"><strong>Banco:</strong> NU</div>
+    <div class="dato"><strong>Titular:</strong> Jose Gonzalez</div>
+
+    <button onclick="copiarNumero()">Copiar número</button>
+  </div>
+
+  <script>
+    function copiarNumero() {
+      const numero = document.getElementById("numero").innerText;
+      navigator.clipboard.writeText(numero).then(() => {
+        alert("Número copiado al portapapeles ✅");
+      });
+    }
+  </script>
+</body>
+</html>
